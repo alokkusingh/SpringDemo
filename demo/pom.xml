@@ -91,10 +91,10 @@
 				<configuration> <excludeDevtools>false</excludeDevtools> </configuration> 
 				</plugin> -->
 			<!-- the below plugin is to deploy the war to the defined server using 
-				maven command "mvn tomcat7:deploy" or "mvn tomcat7:redeploy" or mvn tomcat7:undeploy -->
+				maven command "mvn tomcat8:deploy" or "mvn tomcat8:redeploy" or mvn tomcat8:undeploy -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
+				<artifactId>tomcat8-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
 					<!-- server is defined in mvn setting.xml, usename/pwd defined there -->
