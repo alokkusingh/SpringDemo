@@ -66,7 +66,7 @@ select * from acuser_acrole;
 		*/
 	}
 
-/*	@Bean
+	@Bean
 	CommandLineRunner init(final AccountRepository accountRepository, final BookmarkRepository bookmarkRepository) {
 		
 		return new CommandLineRunner() {
@@ -85,6 +85,6 @@ select * from acuser_acrole;
 		};
 
 
-	}*/
+	}
 
 }
