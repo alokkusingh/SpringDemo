@@ -2,6 +2,7 @@ package com.alok.spring.rest.test.demo.authentication.filter;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -18,6 +19,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.alok.spring.rest.test.demo.entity.ACUser;
 import com.alok.spring.rest.test.demo.jpa.ACUserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	private static final long EXPIRATION_TIME = 30;
@@ -60,6 +64,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .signWith(SignatureAlgorithm.HS512, "alok".getBytes())
                 .compact();
         
-        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        //res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        res.addHeader("ALOK_JWT", "JWT" + token);
     }
 }
